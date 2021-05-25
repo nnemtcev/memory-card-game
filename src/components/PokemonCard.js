@@ -6,6 +6,9 @@ const PokemonCard = ({
   listOfClickedPokemon,
   setListOfClickedPokemon,
   setCurrentScore,
+  currentScore,
+  bestScore,
+  setBestScore,
 }) => {
   const { name, spriteURL } = pokemon;
 
@@ -13,10 +16,14 @@ const PokemonCard = ({
     const wasPokemonCardClickedPreviously = listOfClickedPokemon.indexOf(name);
 
     if (wasPokemonCardClickedPreviously < 0) {
+      setListOfClickedPokemon([...listOfClickedPokemon, name]);
+      setCurrentScore(currentScore + 1);
+      if (currentScore + 1 > bestScore) {
+        setBestScore(currentScore + 1);
+      }
+    } else {
       setListOfClickedPokemon([]);
       setCurrentScore(0);
-    } else {
-      setListOfClickedPokemon([...listOfClickedPokemon, name]);
     }
   };
 

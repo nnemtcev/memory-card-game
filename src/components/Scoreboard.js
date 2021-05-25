@@ -1,7 +1,17 @@
 import React from "react";
 
-const Scoreboard = () => {
-  return <div>Scoreboard</div>;
+const Scoreboard = ({
+  currentScore,
+  setCurrentScore,
+  bestScore,
+  setBestScore,
+}) => {
+  return (
+    <div>
+      <p>Score: {currentScore}</p>
+      <p>Best score: {bestScore}</p>
+    </div>
+  );
 };
 
 export default Scoreboard;

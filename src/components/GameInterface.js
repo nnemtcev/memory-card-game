@@ -15,7 +15,7 @@ const GameInterface = () => {
     let nextThreePokemon = [];
 
     while (setOfThreeNums.size < 3) {
-      let randomNum = 1 + Math.floor(Math.random() * 100);
+      let randomNum = 1 + Math.floor(Math.random() * 5);
 
       if (setOfThreeNums.has(randomNum)) {
         continue;
@@ -34,25 +34,38 @@ const GameInterface = () => {
     return nextThreePokemon;
   };
 
-  const renderPokemonInitially = async () => {
+  const setPokemonCards = async () => {
     const threeRandomPokemon = await getThreeRandomPokemon();
     setCurrentPokemon(threeRandomPokemon);
   };
 
   useEffect(() => {
-    renderPokemonInitially();
+    setPokemonCards();
   }, [listOfClickedPokemon]);
 
-  return currentPokemon.length === 0
-    ? "Loading..."
-    : currentPokemon.map((pokemon) => (
+  return currentPokemon.length === 0 ? (
+    "Loading..."
+  ) : (
+    <div>
+      <Scoreboard
+        currentScore={currentScore}
+        setCurrentScore={setCurrentScore}
+        bestScore={bestScore}
+        setBestScore={setBestScore}
+      />
+      {currentPokemon.map((pokemon) => (
         <PokemonCard
           pokemon={pokemon}
           setListOfClickedPokemon={setListOfClickedPokemon}
           listOfClickedPokemon={listOfClickedPokemon}
           setCurrentScore={setCurrentScore}
+          currentScore={currentScore}
+          setBestScore={setBestScore}
+          bestScore={bestScore}
         />
-      ));
+      ))}
+    </div>
+  );
 };
 
 export default GameInterface;
