@@ -41,11 +41,18 @@ const GameInterface = () => {
 
   useEffect(() => {
     renderPokemonInitially();
-  }, []);
+  }, [listOfClickedPokemon]);
 
-  return currentPokemon.map((pokemon) => (
-    <div key={pokemon.name}>{pokemon.name}</div>
-  ));
+  return currentPokemon.length === 0
+    ? "Loading..."
+    : currentPokemon.map((pokemon) => (
+        <PokemonCard
+          pokemon={pokemon}
+          setListOfClickedPokemon={setListOfClickedPokemon}
+          listOfClickedPokemon={listOfClickedPokemon}
+          setCurrentScore={setCurrentScore}
+        />
+      ));
 };
 
 export default GameInterface;
