@@ -5,7 +5,9 @@ import GameInterface from "./GameInterface";
 const App = () => {
   return (
     <div>
-      <GameInterface />
+      <div className="game-container">
+        <GameInterface />
+      </div>
     </div>
   );
 };

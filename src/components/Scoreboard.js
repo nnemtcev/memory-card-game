@@ -7,7 +7,7 @@ const Scoreboard = ({
   setBestScore,
 }) => {
   return (
-    <div>
+    <div id="scoreboard">
       <p>Score: {currentScore}</p>
       <p>Best score: {bestScore}</p>
     </div>
