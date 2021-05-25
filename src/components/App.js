@@ -5,7 +5,7 @@ import GameInterface from "./GameInterface";
 const App = () => {
   return (
     <div>
-      <div className="game-container">
+      <div>
         <GameInterface />
       </div>
     </div>

@@ -8,8 +8,10 @@ const Scoreboard = ({
 }) => {
   return (
     <div id="scoreboard">
-      <p>Score: {currentScore}</p>
-      <p>Best score: {bestScore}</p>
+      <h1>Welcome to Pokémon Memory Game!</h1>
+      <h2>To play, select the pokémon that you haven't seen yet.</h2>
+      <div>Score: {currentScore}</div>
+      <div>Best score: {bestScore}</div>
     </div>
   );
 };

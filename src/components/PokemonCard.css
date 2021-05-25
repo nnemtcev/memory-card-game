@@ -6,6 +6,7 @@
 
 body {
   font-family: "Press Start 2P";
+  font-size: 24px;
   color: white;
   background: url("https://i.pinimg.com/originals/df/4e/8b/df4e8ba28f912bf9cdf9fa0dfc196411.png");
   background-size: cover;
@@ -21,6 +22,7 @@ body {
   margin: 15px;
   transition: transform, box-shadow;
   transition-duration: 0.2s;
+  cursor: pointer;
 }
 
 .pokemon-card:hover {
@@ -36,4 +38,13 @@ body {
 #scoreboard {
   margin-top: 30px;
   text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 20px 0;
 }

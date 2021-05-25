@@ -53,17 +53,19 @@ const GameInterface = () => {
         bestScore={bestScore}
         setBestScore={setBestScore}
       />
-      {currentPokemon.map((pokemon) => (
-        <PokemonCard
-          pokemon={pokemon}
-          setListOfClickedPokemon={setListOfClickedPokemon}
-          listOfClickedPokemon={listOfClickedPokemon}
-          setCurrentScore={setCurrentScore}
-          currentScore={currentScore}
-          setBestScore={setBestScore}
-          bestScore={bestScore}
-        />
-      ))}
+      <div className="game-container">
+        {currentPokemon.map((pokemon) => (
+          <PokemonCard
+            pokemon={pokemon}
+            setListOfClickedPokemon={setListOfClickedPokemon}
+            listOfClickedPokemon={listOfClickedPokemon}
+            setCurrentScore={setCurrentScore}
+            currentScore={currentScore}
+            setBestScore={setBestScore}
+            bestScore={bestScore}
+          />
+        ))}
+      </div>
     </div>
   );
 };
