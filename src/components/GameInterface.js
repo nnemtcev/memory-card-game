@@ -4,7 +4,7 @@ import Scoreboard from "./Scoreboard";
 import React, { useState, useEffect } from "react";
 import axios from "../api/axios";
 
-const GameInterface = () => {
+function GameInterface() {
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [listOfClickedPokemon, setListOfClickedPokemon] = useState([]);
@@ -15,7 +15,7 @@ const GameInterface = () => {
     let nextThreePokemon = [];
 
     while (setOfThreeNums.size < 3) {
-      let randomNum = 1 + Math.floor(Math.random() * 5);
+      let randomNum = 1 + Math.floor(Math.random() * 50);
 
       if (setOfThreeNums.has(randomNum)) {
         continue;
@@ -68,6 +68,6 @@ const GameInterface = () => {
       </div>
     </div>
   );
-};
+}
 
 export default GameInterface;

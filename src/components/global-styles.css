@@ -1,8 +1,12 @@
+/* Stylesheet reset */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Background and font styles */
 
 body {
   font-family: "Press Start 2P";
@@ -10,24 +14,6 @@ body {
   color: white;
   background: url("https://i.pinimg.com/originals/df/4e/8b/df4e8ba28f912bf9cdf9fa0dfc196411.png");
   background-size: cover;
-}
-
-.pokemon-card {
-  background-color: #ecf0f1;
-  min-width: 200px;
-  text-align: center;
-  border: 3px solid #3498db;
-  border-radius: 8px;
-  display: inline-block;
-  margin: 15px;
-  transition: transform, box-shadow;
-  transition-duration: 0.2s;
-  cursor: pointer;
-}
-
-.pokemon-card:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px 1px rgb(0, 0, 0, 0.1);
 }
 
 .game-container {

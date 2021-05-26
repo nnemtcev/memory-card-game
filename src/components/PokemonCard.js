@@ -1,5 +1,23 @@
 import React from "react";
-import "./PokemonCard.css";
+import styled from "styled-components";
+
+const PokemonCardStyled = styled.div`
+  background-color: #ecf0f1;
+  min-width: 200px;
+  text-align: center;
+  border: 3px solid #3498db;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 15px;
+  transition: transform, box-shadow;
+  transition-duration: 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px 1px rgb(0, 0, 0, 0.1);
+  }
+`;
 
 const PokemonCard = ({
   pokemon,
@@ -10,14 +28,17 @@ const PokemonCard = ({
   bestScore,
   setBestScore,
 }) => {
-  const { name, spriteURL } = pokemon;
+  const { name: clickedPokemonName, spriteURL } = pokemon;
 
   const onPokemonCardClick = () => {
-    const wasPokemonCardClickedPreviously = listOfClickedPokemon.indexOf(name);
+    const indexOfClickedPokemon = listOfClickedPokemon.indexOf(
+      clickedPokemonName
+    );
 
-    if (wasPokemonCardClickedPreviously < 0) {
-      setListOfClickedPokemon([...listOfClickedPokemon, name]);
+    if (indexOfClickedPokemon < 0) {
+      setListOfClickedPokemon([...listOfClickedPokemon, clickedPokemonName]);
       setCurrentScore(currentScore + 1);
+
       if (currentScore + 1 > bestScore) {
         setBestScore(currentScore + 1);
       }
@@ -28,9 +49,14 @@ const PokemonCard = ({
   };
 
   return (
-    <div onClick={onPokemonCardClick} className="pokemon-card">
-      <img width="200" src={`${spriteURL}`} alt={`${name}`} key={`${name}`} />
-    </div>
+    <PokemonCardStyled onClick={onPokemonCardClick} className="pokemon-card">
+      <img
+        width="200"
+        src={`${spriteURL}`}
+        alt={`${clickedPokemonName}`}
+        key={`${clickedPokemonName}`}
+      />
+    </PokemonCardStyled>
   );
 };
 

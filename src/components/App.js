@@ -1,15 +1,14 @@
 import React from "react";
+import "./global-styles.css";
 
 import GameInterface from "./GameInterface";
 
-const App = () => {
+function App() {
   return (
     <div>
-      <div>
-        <GameInterface />
-      </div>
+      <GameInterface />
     </div>
   );
-};
+}
 
 export default App;
