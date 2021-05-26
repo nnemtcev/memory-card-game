@@ -45,6 +45,7 @@ const PokemonCard = ({
 
       if (currentScore + 1 > bestScore) {
         setBestScore(currentScore + 1);
+        localStorage.setItem("bestScore", currentScore + 1);
       }
     } else {
       setListOfClickedPokemon([]);

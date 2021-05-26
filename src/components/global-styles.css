@@ -61,7 +61,7 @@ h2 {
 }
 
 #reset-btn:hover {
-  background-color: #ffeaa7;
+  transform: scale(1.1);
 }
 
 #reset-btn:active {
