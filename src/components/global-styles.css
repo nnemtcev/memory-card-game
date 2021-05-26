@@ -9,7 +9,7 @@
 /* Background and font styles */
 
 body {
-  font-family: "Press Start 2P";
+  font-family: "Press Start 2P", Arial;
   font-size: 24px;
   color: white;
   background: url("https://i.pinimg.com/originals/df/4e/8b/df4e8ba28f912bf9cdf9fa0dfc196411.png");
@@ -19,6 +19,13 @@ body {
 .game-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .game-container {
+    flex-direction: column;
+  }
 }
 
 #scoreboard {
@@ -33,4 +40,30 @@ h1 {
 h2 {
   font-size: 24px;
   margin: 20px 0;
+}
+
+.utility-center-div {
+  display: flex;
+  justify-content: center;
+}
+
+#reset-btn {
+  background-color: #fdcb6e;
+  color: white;
+  border: 2px solid #ffeaa7;
+  border-radius: 20px;
+  padding: 20px;
+  font-family: "Press Start 2P", Arial;
+  cursor: pointer;
+  transition: background-color, transform;
+  transition-duration: 0.2s;
+  margin-top: 15px;
+}
+
+#reset-btn:hover {
+  background-color: #ffeaa7;
+}
+
+#reset-btn:active {
+  transform: translateY(3px);
 }

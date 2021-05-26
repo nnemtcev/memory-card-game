@@ -13,6 +13,10 @@ const PokemonCardStyled = styled.div`
   transition-duration: 0.2s;
   cursor: pointer;
 
+  @media only screen and (max-width: 800px) {
+    width: 400px;
+  }
+
   &:hover {
     transform: scale(1.1);
     box-shadow: 0 0 10px 1px rgb(0, 0, 0, 0.1);
