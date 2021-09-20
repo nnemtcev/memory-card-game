@@ -9,3 +9,5 @@ Features include:
 * Score leaderboard keeps track of your high score
 
 Check out the app by clicking [**HERE**](https://pokemon-memory-card-game.netlify.app/), or alternatively, check out the .gif below which demonstrates a basic idea of the game.
+
+![Gameplay .gif](https://i.gyazo.com/a443dfedf77d78afeadc24ac67b41195.gif)
