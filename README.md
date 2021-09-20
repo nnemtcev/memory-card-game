@@ -7,6 +7,7 @@ Features include:
 * Implemented a responsive layout using CSS Flexbox (cards resize)
 * Axios fetches Pokémon data from [PokéAPI](https://pokeapi.co/) with each rendering
 * Score leaderboard keeps track of your high score
+* Custom styling using the CSS-in-JS library
 
 Check out the app by clicking [**HERE**](https://pokemon-memory-card-game.netlify.app/), or alternatively, check out the .gif below which demonstrates a basic idea of the game.
 
