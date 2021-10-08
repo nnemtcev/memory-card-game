@@ -24,6 +24,11 @@ body {
   .game-container {
     flex-direction: column;
   }
+  .pokemon-card {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center;
+  }
 }
 
 #scoreboard {
