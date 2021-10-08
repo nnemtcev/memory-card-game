@@ -1,5 +1,6 @@
 import PokemonCard from "./PokemonCard";
 import Scoreboard from "./Scoreboard";
+import Loading from "./Loading";
 
 import React, { useState, useEffect } from "react";
 import axios from "../api/axios";
@@ -10,6 +11,11 @@ function GameInterface() {
   const [bestScore, setBestScore] = useState(0);
   const [listOfClickedPokemon, setListOfClickedPokemon] = useState([]);
   const [currentPokemon, setCurrentPokemon] = useState([]);
+  const [isLoadingPokemon, setIsLoadingPokemon] = useState(true);
+  const [
+    wasPokemonChosenSuccessfully,
+    setWasPokemonChosenSuccessfully,
+  ] = useState(null);
 
   const getThreeRandomPokemon = async () => {
     let setOfThreeNums = new Set();
@@ -38,14 +44,21 @@ function GameInterface() {
   const setPokemonCards = async () => {
     const threeRandomPokemon = await getThreeRandomPokemon();
     setCurrentPokemon(threeRandomPokemon);
+    setTimeout(() => setIsLoadingPokemon(null), 1000);
   };
 
   useEffect(() => {
     setPokemonCards();
-  }, [listOfClickedPokemon]);
 
-  return currentPokemon.length === 0 ? (
-    "Loading..."
+    document.title = "Pokémemory | How Many Pokémon Can You Remember?";
+  }, [listOfClickedPokemon, isLoadingPokemon]);
+
+  return isLoadingPokemon === true ? (
+    <Loading width={500} height={500} animationName="loading" />
+  ) : wasPokemonChosenSuccessfully === true ? (
+    <Loading width={500} height={500} animationName="success" />
+  ) : wasPokemonChosenSuccessfully === false ? (
+    <Loading width={400} height={400} animationName="failure" />
   ) : (
     <div>
       <Scoreboard
@@ -64,6 +77,7 @@ function GameInterface() {
             currentScore={currentScore}
             setBestScore={setBestScore}
             bestScore={bestScore}
+            setWasPokemonChosenSuccessfully={setWasPokemonChosenSuccessfully}
           />
         ))}
       </div>

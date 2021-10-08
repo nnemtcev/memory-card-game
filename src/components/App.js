@@ -5,7 +5,7 @@ import GameInterface from "./GameInterface";
 
 function App() {
   return (
-    <div>
+    <div id="load-spinner">
       <GameInterface />
     </div>
   );

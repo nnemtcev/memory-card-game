@@ -31,6 +31,7 @@ const PokemonCard = ({
   currentScore,
   bestScore,
   setBestScore,
+  setWasPokemonChosenSuccessfully,
 }) => {
   const { name: clickedPokemonName, spriteURL } = pokemon;
 
@@ -47,9 +48,16 @@ const PokemonCard = ({
         setBestScore(currentScore + 1);
         localStorage.setItem("bestScore", currentScore + 1);
       }
+
+      setWasPokemonChosenSuccessfully(true);
+
+      setTimeout(() => setWasPokemonChosenSuccessfully(null), 1500);
     } else {
       setListOfClickedPokemon([]);
       setCurrentScore(0);
+      setWasPokemonChosenSuccessfully(false);
+
+      setTimeout(() => setWasPokemonChosenSuccessfully(null), 1000);
     }
   };
 
