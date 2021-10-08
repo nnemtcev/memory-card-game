@@ -9,11 +9,9 @@
 /* Background and font styles */
 
 body {
-  font-family: "Press Start 2P", Arial;
+  font-family: "Lato", sans-serif;
   font-size: 24px;
-  color: white;
-  background: url("https://i.pinimg.com/originals/df/4e/8b/df4e8ba28f912bf9cdf9fa0dfc196411.png");
-  background-size: cover;
+  color: black;
 }
 
 .game-container {
@@ -48,9 +46,9 @@ h2 {
 }
 
 #reset-btn {
-  background-color: #fdcb6e;
+  background-color: #3498db;
   color: white;
-  border: 2px solid #ffeaa7;
+  border: 2px solid #2980b9;
   border-radius: 20px;
   padding: 20px;
   font-family: "Press Start 2P", Arial;
@@ -58,6 +56,7 @@ h2 {
   transition: background-color, transform;
   transition-duration: 0.2s;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 #reset-btn:hover {
