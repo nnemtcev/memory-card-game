@@ -50,7 +50,7 @@ function GameInterface() {
   useEffect(() => {
     setPokemonCards();
 
-    document.title = "Pokémemory | How Many Pokémon Can You Remember?";
+    document.title = "Pokémemory - How Many Pokémon Can You Remember?";
   }, [listOfClickedPokemon, isLoadingPokemon]);
 
   return isLoadingPokemon === true ? (
